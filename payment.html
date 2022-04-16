@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Place the order</title>
     <style>
         form {
             display: flex;
             flex-direction: column;
             padding: 20px;
-            height: 300px;
+            height: 100px;
             justify-content: space-between;
         }
-        h1 {
-            color: aqua;
-            background-color: brown;
+        .for {
+            font-size: 25px;
+        }
+        .brn {
+            font-size: 25px;
+            margin-top: 30px;
+        }
+        .brn:hover {
+            background-color: bisque;
+            color: blueviolet;
         }
     </style>
 </head>
@@ -23,8 +30,8 @@
     <div>
         <h1>Enter payment details below to proceed</h1>
         <form>
-            <input type='number' placeholder="Enter your card number"/>
-            <input type="button" value="Pay" onclick="pay();" />
+            <input class="for" type='number' placeholder="Enter your card number"/>
+            <input class="brn" type="button" value="Pay" onclick="pay();" />
         </form>
         
     </div>
