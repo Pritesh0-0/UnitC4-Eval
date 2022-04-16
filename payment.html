@@ -6,6 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place the order</title>
     <style>
+        #navBar {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            color: red;
+            background-color: aqua;
+            height: 100px;
+        }
+        #navBar a:hover {
+           color: blueviolet;
+        }
+        a {
+            text-decoration: none;
+            font-size: 21px;
+        }
+        #navBar a {
+            cursor: pointer;
+        }
+        #container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-left: 20%;
+            margin-top: 50px;
+
+        }
+        button {
+            background-color: white;
+            border-radius: 10px;
+        }
+        button > a {
+            color: red;
+        }
         form {
             display: flex;
             flex-direction: column;
@@ -27,6 +60,14 @@
     </style>
 </head>
 <body>
+     <div id="navBar">
+        <div><a href="./products.html">Home</a></div>
+        <div><a href="">Trending</a></div>
+        <div><a href="">VoteUS</a></div>
+        <button>
+            <a href="carts.html">Mycart</a>
+        </button>
+    </div>
     <div>
         <h1>Enter payment details below to proceed</h1>
         <form>
