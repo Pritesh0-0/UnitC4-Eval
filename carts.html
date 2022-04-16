@@ -4,27 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MyCart</title>
     <style>
+        #checkout {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
         .ab {
             border-radius: 10px;
-            background-color: red;
-            color: white;
+            background-color:white;
+            color: black;
+            font-size: 40px;
         }
-        .ab :hover{
+        button :hover{
             background-color: white;
             color: red;
             cursor: pointer;
+            margin-top: 15%;
         }
-
+        .pp {
+            font-size: 40px;
+            background-color: black;
+            color: white;
+            
+        }
+        .box{
+            margin-bottom: 20px;
+        }
+        .name {
+            font-size: 22px;
+            font-style: italic;
+        }
+        .price {
+            font-size: 20px;
+        }
+        .box:hover {
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        .img {
+            padding-left:27% ;
+            padding-top: 5%;
+        }
+        .btn {
+            font-size: 19px;
+        }
+        .btn:hover {
+            background-color: aqua;
+            color: white;
+            cursor: pointer;
+        }
+        .btnd {
+            
+            margin-top: 3%;
+        }
     </style>
 </head>
 <body>
-    <p></p>
+    <p class="pp">
+
+    </p>
     <div id="checkout">
-        <button class="ab"><a href="checkout.html">Checkout</a>
-        </button>
+        
     </div>
+    <div class="btnd">
+    <button class="ab"><a href="checkout.html">Checkout</a>
+    </button>
+</div>  
 </body>
 <script>
     var cartData = JSON.parse(localStorage.getItem('cartData'));
@@ -33,23 +79,27 @@
         return sum + Number(ele.price);
     }, 0);
     var totalItems = cartData.length;
-    document.querySelector('p').innerText = 'You have ' + " " + totalItems + " " + "items" + " "+ "in your cart and total is" + totalSum; 
+    document.querySelector('p').innerText = 'You have ' + " " + totalItems + " " + "items" + " "+ "in your cart and total is -- Rs. " + totalSum; 
     cartData.forEach((cartItem, cartIndex) => {
         var box = document.createElement('div');
         box.setAttribute('class', 'box')
 
         var img = document.createElement('img');
         img.src = cartItem.image_url;
-
+        img.setAttribute('class', 'img');
 
         var name = document.createElement('p');
         name.textContent = cartItem.name;
+        name.setAttribute('class', 'name');
 
         var price = document.createElement('p');
         price.innerText = cartItem.price;
-
+        price.setAttribute('class', 'price');
+        
         var cartButton = document.createElement('button');
         cartButton.innerText = 'Remove from cart';
+        cartButton.setAttribute ('class', 'btn');
+        
 
         cartButton.addEventListener('click', function() {
            cartData.splice(cartIndex, 1)
@@ -62,5 +112,3 @@
     });
 </script>
 </html>
-
-[{price: 100}, {price: 50}]
